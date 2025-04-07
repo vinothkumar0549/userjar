@@ -12,20 +12,33 @@ public class User {
     private RoleType role;
     private int accountno;
     private double balance;
+    private String mobilenumber;
+    private String aadhaar;
+    
+    public User(String name, String encryptedpassword, RoleType role, String mobilenumber, String aadhaar) {
+        this.name = name;
+        this.encryptedpassword = encryptedpassword;
+        this.role = role;
+        this.mobilenumber = mobilenumber;
+        this.aadhaar = aadhaar;
+    }
 
+    //Test Cases Updated
     public User(String name, String encryptedpassword, RoleType role) {
         this.name = name;
         this.encryptedpassword = encryptedpassword;
         this.role = role;
     }
 
-    public User(int userid, String name, String encryptedpassword, RoleType role, int accountno, double balance) {
+    public User(int userid, String name, String encryptedpassword, RoleType role, int accountno, double balance, String mobilenumber, String aadhaar) {
         this.userid = userid;
         this.name = name;
         this.encryptedpassword = encryptedpassword;
         this.role = role;
         this.accountno = accountno;
         this.balance = balance;
+        this.mobilenumber = mobilenumber;
+        this.aadhaar = aadhaar;
     }
 
     public User() {
@@ -79,10 +92,26 @@ public class User {
         this.balance = balance;
     }
 
+    public String getMobilenumber() {
+        return mobilenumber;
+    }
+
+    public void setMobilenumber(String mobilenumber) {
+        this.mobilenumber = mobilenumber;
+    }
+
+    public String getAadhaar() {
+        return aadhaar;
+    }
+
+    public void setAadhaar(String aadhaar) {
+        this.aadhaar = aadhaar;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%n", userid, name, encryptedpassword, role, accountno, balance));
+        sb.append(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%n", userid, name, encryptedpassword, role, accountno, balance, mobilenumber, aadhaar));
         return sb.toString();    
     }
 
