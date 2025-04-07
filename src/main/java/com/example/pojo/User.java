@@ -12,10 +12,10 @@ public class User {
     private RoleType role;
     private int accountno;
     private double balance;
-    private String mobilenumber;
-    private String aadhaar;
+    private long mobilenumber;
+    private long aadhaar;
     
-    public User(String name, String encryptedpassword, RoleType role, String mobilenumber, String aadhaar) {
+    public User(String name, String encryptedpassword, RoleType role, long mobilenumber, long aadhaar) {
         this.name = name;
         this.encryptedpassword = encryptedpassword;
         this.role = role;
@@ -30,7 +30,7 @@ public class User {
         this.role = role;
     }
 
-    public User(int userid, String name, String encryptedpassword, RoleType role, int accountno, double balance, String mobilenumber, String aadhaar) {
+    public User(int userid, String name, String encryptedpassword, RoleType role, int accountno, double balance, long mobilenumber, long aadhaar) {
         this.userid = userid;
         this.name = name;
         this.encryptedpassword = encryptedpassword;
@@ -92,19 +92,19 @@ public class User {
         this.balance = balance;
     }
 
-    public String getMobilenumber() {
+    public long getMobilenumber() {
         return mobilenumber;
     }
 
-    public void setMobilenumber(String mobilenumber) {
+    public void setMobilenumber(long mobilenumber) {
         this.mobilenumber = mobilenumber;
     }
 
-    public String getAadhaar() {
+    public long getAadhaar() {
         return aadhaar;
     }
 
-    public void setAadhaar(String aadhaar) {
+    public void setAadhaar(long aadhaar) {
         this.aadhaar = aadhaar;
     }
 
