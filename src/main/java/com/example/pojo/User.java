@@ -14,6 +14,7 @@ public class User {
     private double balance;
     private long mobilenumber;
     private long aadhaar;
+    private int transactioncount;
     
     public User(String name, String encryptedpassword, RoleType role, long mobilenumber, long aadhaar) {
         this.name = name;
@@ -30,7 +31,7 @@ public class User {
         this.role = role;
     }
 
-    public User(int userid, String name, String encryptedpassword, RoleType role, int accountno, double balance, long mobilenumber, long aadhaar) {
+    public User(int userid, String name, String encryptedpassword, RoleType role, int accountno, double balance, long mobilenumber, long aadhaar, int transactioncount) {
         this.userid = userid;
         this.name = name;
         this.encryptedpassword = encryptedpassword;
@@ -39,6 +40,7 @@ public class User {
         this.balance = balance;
         this.mobilenumber = mobilenumber;
         this.aadhaar = aadhaar;
+        this.transactioncount = transactioncount;
     }
 
     public User() {
@@ -108,10 +110,18 @@ public class User {
         this.aadhaar = aadhaar;
     }
 
+    public int getTransactioncount(){
+        return transactioncount;
+    }
+
+    public void setTransactioncount(int transactioncount){
+        this.transactioncount = transactioncount;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%n", userid, name, encryptedpassword, role, accountno, balance, mobilenumber, aadhaar));
+        sb.append(String.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%n", userid, name, encryptedpassword, role, accountno, balance, mobilenumber, aadhaar, transactioncount));
         return sb.toString();    
     }
 
